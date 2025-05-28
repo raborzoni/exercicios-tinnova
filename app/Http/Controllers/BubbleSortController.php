@@ -12,7 +12,6 @@ class BubbleSortController extends Controller
      */
     public function ordenarVetorExercicio()
     {
-        // Vetor do exercício
         $vetorExercicio = [5, 3, 2, 4, 7, 1, 0, 6];
         
         $bubbleSort = new BubbleSort($vetorExercicio);

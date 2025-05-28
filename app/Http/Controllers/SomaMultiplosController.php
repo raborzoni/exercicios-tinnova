@@ -45,7 +45,6 @@ class SomaMultiplosController extends Controller
 
         $somaMultiplos = new SomaMultiplos();
         
-        // Usa fórmula para números grandes, iterativo para pequenos
         if ($numero > 10000) {
             $resultado = $somaMultiplos->calcularFormula($numero, false);
             $metodo = 'formula_matematica';

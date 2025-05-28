@@ -27,7 +27,6 @@ class SomaMultiplos
     {
         $this->resetar();
         
-        // Validação
         if ($numero <= 0) {
             return [
                 'erro' => true,
@@ -48,7 +47,6 @@ class SomaMultiplos
         $soma = 0;
         $multiplos = [];
 
-        // Percorre todos os números de 1 até numero-1
         for ($i = 1; $i < $numero; $i++) {
             $this->totalOperacoes++;
             
@@ -73,7 +71,6 @@ class SomaMultiplos
                     ];
                 }
             } else if ($mostrarPassos && $numero <= 20) {
-                // Só mostra números que não são múltiplos se o numero for pequeno
                 $this->historico[] = [
                     'tipo' => 'nao_multiplo',
                     'numero' => $i,
@@ -136,16 +133,12 @@ class SomaMultiplos
             ];
         }
 
-        // Soma dos múltiplos de 3
         $somaDe3 = $this->somaMultiplos(3, $numero - 1, $mostrarPassos);
         
-        // Soma dos múltiplos de 5  
         $somaDe5 = $this->somaMultiplos(5, $numero - 1, $mostrarPassos);
         
-        // Soma dos múltiplos de 15 (3 e 5) - para evitar contar duas vezes
         $somaDe15 = $this->somaMultiplos(15, $numero - 1, $mostrarPassos);
 
-        // Aplicar princípio da inclusão-exclusão
         $somaTotal = $somaDe3 + $somaDe5 - $somaDe15;
 
         if ($mostrarPassos) {
@@ -172,7 +165,7 @@ class SomaMultiplos
                 'soma_multiplos_15' => $somaDe15,
                 'explicacao' => 'Soma(múltiplos de 3) + Soma(múltiplos de 5) - Soma(múltiplos de 15)'
             ],
-            'operacoes' => 6, // Operações matemáticas básicas
+            'operacoes' => 6, 
             'historico' => $this->historico
         ];
     }
@@ -191,11 +184,8 @@ class SomaMultiplos
             return 0;
         }
 
-        // Quantos múltiplos existem até o numero
         $quantidade = intval($numero / $multiplo);
         
-        // Soma usando fórmula da PA: S = n * (primeiro + último) / 2
-        // primeiro = multiplo, último = multiplo * quantidade
         $primeiro = $multiplo;
         $ultimo = $multiplo * $quantidade;
         $soma = $quantidade * ($primeiro + $ultimo) / 2;
@@ -232,12 +222,10 @@ class SomaMultiplos
             ];
         }
 
-        // Método iterativo
         $inicioIterativo = microtime(true);
         $resultadoIterativo = $this->calcularIterativo($numero, false);
         $tempoIterativo = microtime(true) - $inicioIterativo;
 
-        // Método com fórmula
         $inicioFormula = microtime(true);
         $resultadoFormula = $this->calcularFormula($numero, false);
         $tempoFormula = microtime(true) - $inicioFormula;
@@ -276,7 +264,7 @@ class SomaMultiplos
     public function executarTesteExercicio(): array
     {
         $numero = 10;
-        $resultadoEsperado = 23; // 3 + 5 + 6 + 9 = 23
+        $resultadoEsperado = 23;
         $multiplosEsperados = [3, 5, 6, 9];
 
         $resultado = $this->calcularIterativo($numero, true);
