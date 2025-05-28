@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VotosController;
 use App\Http\Controllers\BubbleSortController;
 use App\Http\Controllers\FatorialController;
+use App\Http\Controllers\SomaMultiplosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,6 @@ Route::get('/bubble-sort/rapido', [BubbleSortController::class, 'ordenarRapido']
 
 Route::get('/fatorial/testes', [FatorialController::class, 'executarTestes']);
 Route::get('/fatorial/{numero}', [FatorialController::class, 'calcular']);
+
+Route::get('/multiplos/teste', [SomaMultiplosController::class, 'executarTesteExercicio']);
+Route::get('/multiplos/{numero}', [SomaMultiplosController::class, 'calcular']);
