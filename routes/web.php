@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VotosController;
+use App\Http\Controllers\BubbleSortController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('/votos', [VotosController::class, 'calcularPercentuais']);
+
+Route::get('/bubble-sort', [BubbleSortController::class, 'ordenarVetorExercicio']);
+Route::get('/bubble-sort/rapido', [BubbleSortController::class, 'ordenarRapido']);

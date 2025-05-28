@@ -59,7 +59,6 @@ class CalculadoraVotos
         return ($this->votosNulos / $this->totalEleitores) * 100;
     }
 
-    // Métodos getters para acessar os valores (opcional)
     public function getTotalEleitores(): int
     {
         return $this->totalEleitores;
@@ -80,17 +79,3 @@ class CalculadoraVotos
         return $this->votosNulos;
     }
 }
-
-// Exemplo de uso:
-/*
-$calculadora = new CalculadoraVotos(1000, 800, 150, 50);
-
-echo "Percentual de votos válidos: " . number_format($calculadora->percentualVotosValidos(), 2) . "%\n";
-echo "Percentual de votos brancos: " . number_format($calculadora->percentualVotosBrancos(), 2) . "%\n";
-echo "Percentual de votos nulos: " . number_format($calculadora->percentualVotosNulos(), 2) . "%\n";
-
-// Resultado esperado:
-// Percentual de votos válidos: 80.00%
-// Percentual de votos brancos: 15.00%
-// Percentual de votos nulos: 5.00%
-*/

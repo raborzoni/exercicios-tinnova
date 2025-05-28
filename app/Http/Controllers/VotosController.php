@@ -10,16 +10,13 @@ class VotosController extends Controller
 {
     public function calcularPercentuais()
     {
-        // Dados do exercício
         $totalEleitores = 1000;
         $votosValidos = 800;
         $votosBrancos = 150;
         $votosNulos = 50;
 
-        // Instanciando a classe
         $calculadora = new CalculadoraVotos($totalEleitores, $votosValidos, $votosBrancos, $votosNulos);
 
-        // Calculando os percentuais
         $dados = [
             'total_eleitores' => $calculadora->getTotalEleitores(),
             'votos_validos' => $calculadora->getVotosValidos(),
