@@ -24,7 +24,6 @@ Route::get('/', function () {
 Route::get('/votos', [VotosController::class, 'calcularPercentuais']);
 
 Route::get('/bubble-sort', [BubbleSortController::class, 'ordenarVetorExercicio']);
-Route::get('/bubble-sort/rapido', [BubbleSortController::class, 'ordenarRapido']);
 
 Route::get('/fatorial/testes', [FatorialController::class, 'executarTestes']);
 Route::get('/fatorial/{numero}', [FatorialController::class, 'calcular']);
