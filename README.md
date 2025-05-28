@@ -27,7 +27,7 @@ Apois todas as configurações acima, inicie o sistema com o comando:
 - `GET /votos` - Calcula os votos pré-determinados de acordo com a questão.
 
 ### Exercício 2
-- `GET /bubble-sort` - Ordena as posições.
+- `GET /bubble-sort` - Ordena as posições com os números determinados na questão.
 
 ### Exercício 3
 - `GET /fatorial/testes` - Faz os testes com os números básicos, de acordo com o exercício.
